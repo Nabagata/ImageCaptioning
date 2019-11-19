@@ -24,7 +24,8 @@ class FlickrDataset(data.Dataset):
         self.imagex = []
         self.imagey = []
         file_handler = open(json, 'rb+')
-        imagex, imagey = pickle.load(file_handler)
+        self.imagex, self.imagey = pickle.load(file_handler)
+        print(len(self.imagey))
         file_handler.close()
         self.root = root
         # self.coco = COCO(json)

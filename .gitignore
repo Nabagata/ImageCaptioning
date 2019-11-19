@@ -1,5 +1,5 @@
 *.jpg
 *.pyc
 *.ckpt
-captions_train2014.json
-captions_val2014.json
+*.json
+*.pkl

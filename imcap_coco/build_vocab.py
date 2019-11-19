@@ -34,7 +34,7 @@ def build_vocab(json, threshold):
     # print(ids)
     for i, id in enumerate(ids):
         caption = str(coco.anns[id]['caption'])
-        print(caption)
+#        print(caption)
         tokens = nltk.tokenize.word_tokenize(caption.lower())
         counter.update(tokens)
 
@@ -68,7 +68,7 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--caption_path', type=str,
-                        default='../data/coco/annotations/captions_train2014.json',
+                        default='/media/skylark/coco/annotations/captions_train2014.json',
                         help='path for train annotation file')
     parser.add_argument('--vocab_path', type=str, default='../data/coco/vocab.pkl',
                         help='path for saving vocabulary wrapper')

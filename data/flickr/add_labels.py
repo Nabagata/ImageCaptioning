@@ -4,7 +4,7 @@ import csv
 import glob, os
 import pickle
 
-train_part=np.load('test_part.npy')
+train_part=np.load('train_part.npy')
 [",".join(item) for item in train_part.astype(str)]
 #test_part=np.load('test_part.npy')
 #[",".join(item) for item in train_part.astype(str)]
@@ -56,7 +56,7 @@ c=0
 ## printing the field names
 #print('Field names are:' + ', '.join(field for field in fields))
 
-imagex_train = []
+imagex = []
 imagey = []
 
 #print('\nrows are:\n')
@@ -94,15 +94,21 @@ with open('results.csv') as csv_file:
         		if x.decode() == row[0]:
 #        			print(line_count)
 #        			print('\t{} {} {}.'.format(row[0],row[1],row[2]))
-        			imagex.append(row[0])
-        			imagex.append(row[0])
-        			imagex.append(row[0])
-        			imagex.append(row[0])
-        			imagex.append(row[0])
-        			imagey.append(row[2])
-        			line_count += 1
-    print('Processed {} lines.'.format(line_count))
-    
+#					temp = []
+#					temp.append(row[2])
+#					temp.append(row[2])
+#					temp.append(row[2])
+#					temp.append(row[2])
+#					temp.append(row[2])
+#        			imagex.append(row[0])
+#        			imagex.append(row[0])
+#        			imagex.append(row[0])
+#        			imagex.append(row[0])
+#        			imagex.append(row[0])
+					imagey.append(row[2])
+					imagex.append(row[0])
+					line_count += 1
+    print('Processed {} lines.'.format(line_count))    
     
 #file_handler = open('images_pickle.dat', 'rb+')
 #imagex, imagey = pickle.load(file_handler)
@@ -114,4 +120,5 @@ file_handler.close()
 #	print(i)
 #for i in imagey:
 #	print(i)    
-
+print(len(imagex))
+print(len(imagey))
